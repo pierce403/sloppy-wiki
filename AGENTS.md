@@ -13,22 +13,6 @@ This file contains instructions and guidelines for AI agents (like Cursor, Copil
 3. **Template First**: Remember this is a template - make it easy to customize
 4. **Best Practices**: Follow MkDocs and Material theme conventions
 
-## First-time setup protocol
-
-AI agents must proactively check whether the user is provisioning their wiki for the first time.
-
-1. **Ask early**: “Are you setting up your wiki from this template for the first time?” If yes (or unclear), switch into onboarding mode.
-2. **Follow `SETUP.md`**: Use the new provisioning guide as your canonical checklist. Quote the relevant step so the user knows where they are in the process.
-3. **Gather branding inputs**: Explicitly ask for the site name, tagline, logo asset (SVG/PNG + desired path), favicon, primary HEX color, accent HEX color, preferred default mode, and any custom domain requirements.
-4. **Document decisions**: Fill out (or prompt the user to fill out) the decision log table at the bottom of `SETUP.md`.
-5. **Walk through actions**:
-   - Copy logos into `docs/img/` and update `mkdocs.yml` (`site_name`, `site_description`, `theme.logo`, `palette`, etc.).
-   - Help the user edit `docs/index.md` and `nav:` entries so navigation matches their plan.
-   - Ensure they run `source activate.sh`, `./serve.sh`, and `./build.sh` during the session.
-6. **Confirm completion**: Repeat the remaining steps from `SETUP.md` (deployment, QA, commit workflow) so the user knows they finished first-time setup.
-7. **Always commit and push**: After testing, `git add .`, `git commit`, and `git push` (per README workflow). Do not leave uncommitted work when you finish assisting the user.
-8. **Leave `gh-pages` alone**: Never edit or commit directly on the `gh-pages` branch. That branch is overwritten by GitHub Actions deploys—always work on `main` (or feature branches) and let the workflow publish the site.
-
 ## Development Workflow
 
 ### Before Making Changes
@@ -249,3 +233,4 @@ If you're an AI agent and unsure about something:
 **Last Updated**: 2025-10-25
 **Maintained By**: AI Agents + Human Contributors
 **Build Status**: Should always be passing ✓
+

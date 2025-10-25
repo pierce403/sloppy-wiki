@@ -37,19 +37,19 @@ theme:
   
   # Navigation and UI features
   features:
-    - navigation.instant        # Match deanpierce.net behavior
-    - navigation.tracking
-    - navigation.sections
-    - navigation.expand
-    - toc.follow
-    - search.highlight
-    - search.suggest
-    - content.code.copy
+    - navigation.instant        # Instant page loading
+    - navigation.tracking       # Track active page
+    - navigation.sections       # Section grouping in sidebar
+    - toc.follow                # Follow table of contents
+    - search.suggest            # Search suggestions
+    - search.highlight          # Highlight search terms
+    - content.code.copy         # Copy button for code blocks
+    - content.action.edit       # Edit button on pages
 
   # Logo and favicon (customize these!)
-  logo: img/sloppy-wiki.png
+  logo: img/logo.png
   favicon: img/favicon.png
-  
+
   # Font configuration (optional)
   font:
     text: Roboto
@@ -157,3 +157,4 @@ extra:
 
 # Copyright notice (customize this!)
 copyright: Copyright &copy; 2025 Your Name - Licensed under Apache 2.0
+
