@@ -48,7 +48,7 @@ theme:
     - content.action.edit       # Edit button on pages
 
   # Logo and favicon (customize these!)
-  logo: img/logo.png
+  logo: img/sloppy-wiki.png
   favicon: img/favicon.png
 
   # Font configuration (optional)
