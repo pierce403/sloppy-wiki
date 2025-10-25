@@ -1,0 +1,142 @@
+/* Custom Styles for Sloppy Wiki Template
+ * 
+ * This file contains custom CSS overrides for your wiki.
+ * You can modify these styles to match your brand or preferences.
+ */
+
+/* ===== Navigation Improvements ===== */
+
+/* Better wrapping for long navigation items */
+.md-nav__item {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.md-nav__link {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+/* ===== Content Enhancements ===== */
+
+/* Add some breathing room to content */
+.md-content {
+    max-width: 900px;
+}
+
+/* Improve table styling */
+.md-typeset table:not([class]) {
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 4px;
+}
+
+.md-typeset table:not([class]) th {
+    background-color: var(--md-default-fg-color--lightest);
+    font-weight: 600;
+}
+
+/* ===== Code Block Improvements ===== */
+
+/* Better code block styling */
+.md-typeset pre > code {
+    border-radius: 4px;
+}
+
+/* Inline code emphasis */
+.md-typeset code {
+    padding: 0.1em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+/* ===== Admonition Styling ===== */
+
+/* Slightly rounded corners for admonitions */
+.md-typeset .admonition {
+    border-radius: 6px;
+    border-left-width: 4px;
+}
+
+/* ===== Custom Elements ===== */
+
+/* Add a hero section style if you want one on your home page */
+.hero {
+    text-align: center;
+    padding: 3em 2em;
+    background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, var(--md-accent-fg-color) 100%);
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 2em;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: white;
+}
+
+.hero p {
+    font-size: 1.2em;
+    opacity: 0.95;
+}
+
+/* Card layout for feature grids */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5em;
+    margin: 2em 0;
+}
+
+.feature-card {
+    padding: 1.5em;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card h3 {
+    margin-top: 0;
+    color: var(--md-primary-fg-color);
+}
+
+/* ===== Responsive Improvements ===== */
+
+@media screen and (max-width: 76.1875em) {
+    /* Better mobile navigation */
+    .md-nav--primary .md-nav__title {
+        background-color: var(--md-primary-fg-color);
+    }
+}
+
+/* ===== Dark Mode Specific Tweaks ===== */
+
+[data-md-color-scheme="slate"] {
+    /* Adjust any dark mode specific styles here */
+}
+
+[data-md-color-scheme="slate"] .feature-card {
+    border-color: var(--md-default-fg-color--lightest);
+    background-color: var(--md-code-bg-color);
+}
+
+/* ===== Print Styles ===== */
+
+@media print {
+    .md-header,
+    .md-sidebar,
+    .md-footer {
+        display: none;
+    }
+    
+    .md-content {
+        max-width: 100%;
+    }
+}
+
