@@ -26,6 +26,7 @@ AI agents must proactively check whether the user is provisioning their wiki for
    - Help the user edit `docs/index.md` and `nav:` entries so navigation matches their plan.
    - Ensure they run `source activate.sh`, `./serve.sh`, and `./build.sh` during the session.
 6. **Confirm completion**: Repeat the remaining steps from `SETUP.md` (deployment, QA, commit workflow) so the user knows they finished first-time setup.
+7. **Always commit and push**: After testing, `git add .`, `git commit`, and `git push` (per README workflow). Do not leave uncommitted work when you finish assisting the user.
 
 ## Development Workflow
 
