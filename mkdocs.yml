@@ -47,7 +47,7 @@ theme:
     - content.action.edit       # Edit button on pages
   
   # Logo and favicon (customize these!)
-  logo: img/logo.png
+  logo: img/sloppy-wiki.png
   favicon: img/favicon.png
   
   # Font configuration (optional)
@@ -161,4 +161,3 @@ extra:
 
 # Copyright notice (customize this!)
 copyright: Copyright &copy; 2025 Your Name - Licensed under Apache 2.0
-
