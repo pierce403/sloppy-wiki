@@ -1,78 +1,88 @@
 # Sloppy Wiki Template 📚
 
-A complete, ready-to-use template for creating beautiful documentation wikis with [MkDocs](https://www.mkdocs.org/) and [Material theme](https://squidfunk.github.io/mkdocs-material/).
+Launch a polished MkDocs + Material wiki by following the exact steps below.
+This README is your landing page—start here, then jump into the template with your favorite agentic editor (Cursor, Copilot Workspace, Claude Projects, etc.).
 
 [![Deploy Status](https://github.com/pierce403/sloppy-wiki/actions/workflows/deploy.yml/badge.svg)](https://github.com/pierce403/sloppy-wiki/actions/workflows/deploy.yml)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
-## ✨ Features
+## 🧭 Step-by-step launch checklist
 
-- 🚀 **Quick Setup** - Get started in under 5 minutes
-- 🎨 **Beautiful Theme** - Material Design with dark mode
-- ⚙️ **Auto-Deploy** - GitHub Actions workflow included
-- 📝 **Rich Content** - Markdown extensions, code blocks, diagrams
-- 🔍 **Built-in Search** - Fast client-side search
-- 📱 **Mobile-Friendly** - Fully responsive design
-- 🎓 **Well-Documented** - Learn by example with comprehensive guides
+**Step 1 — Visit the template on GitHub**
 
-## 🚀 Quick Start
+1. Sign into GitHub in your browser.
+2. Navigate to `https://github.com/pierce403/sloppy-wiki`.
+3. Confirm you see the green **Use this template** button near the top right.
+
+**Step 2 — Create your own copy**
+
+1. Click **Use this template → Create a new repository**.
+2. Choose the owner/org, set a descriptive repository name, and keep the default branch (`main`).
+3. Leave the “Include all branches” box unchecked unless you know you need it.
+4. Click **Create repository** and wait for GitHub to scaffold your copy.
+
+**Step 3 — Clone locally**
 
 ```bash
-# 1. Clone or fork this repository
-git clone https://github.com/pierce403/sloppy-wiki.git
-cd sloppy-wiki
-
-# 2. Set up environment
-source activate.sh
-
-# 3. Start development server
-./serve.sh
+git clone https://github.com/<your-account>/<your-sloppy-wiki>.git
+cd <your-sloppy-wiki>
 ```
 
-Open http://127.0.0.1:8000 in your browser!
+Replace placeholders with your repo details or use the SSH URL if that is your preference.
 
-## 📖 Documentation
+**Step 4 — Open the project with an agentic editor**
 
-The template includes comprehensive documentation covering:
+1. Launch Cursor (or your preferred AI-enhanced editor).
+2. Select **Open Folder…** and point it at the freshly cloned repository.
+3. Let the editor index the project so its agent can answer questions about MkDocs, workflows, and scripts in this template.
 
-- **Getting Started** - Installation, quick start, configuration
-- **Content Creation** - Writing pages, Markdown tips, code blocks, diagrams
-- **Customization** - Themes, navigation, styling, plugins
-- **Deployment** - GitHub Pages, custom domains, alternatives
-- **Examples** - Sample pages and templates
+**Step 5 — Activate the local tooling**
 
-[View full documentation →](https://pierce403.github.io/sloppy-wiki)
+```bash
+source activate.sh        # Sets up the Python virtual environment
+./serve.sh                # Starts mkdocs serve with Material theme
+```
 
-## 🛠️ Tech Stack
+Visit `http://127.0.0.1:8000` to confirm the wiki renders.
+Keep the server running so you can preview edits in real time.
 
-- [MkDocs](https://www.mkdocs.org/) - Static site generator
-- [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) - Modern theme
-- [PyMdown Extensions](https://facelessuser.github.io/pymdown-extensions/) - Enhanced Markdown
-- [GitHub Actions](https://github.com/features/actions) - CI/CD automation
-- [GitHub Pages](https://pages.github.com/) - Free hosting
+**Step 6 — Run the first-time provisioning guide**
 
-## 🚢 Deployment
+Open [`SETUP.md`](SETUP.md) and walk through the provisioning flow (logo, color palette, nav structure, repo secrets, CI verification, etc.).
+Capture every decision so future contributors know how the wiki was customized.
 
-Push your code to GitHub and it automatically deploys to GitHub Pages!
+## ✨ Why this template?
 
-Your wiki will be live at: `https://yourusername.github.io/repository-name`
+- 🚀 **Fast onboarding** — Scripts plus SETUP.md get you from template to live docs quickly.
+- 🎨 **Material polish** — Light/dark modes, palettes, and branding hooks ready to go.
+- ⚙️ **CI/CD baked in** — GitHub Actions builds with `mkdocs build --strict`.
+- 📝 **Education-first** — Heavily commented configs and docs for humans + AI agents.
+- 🔍 **Searchable** — Built-in client-side search and structured nav examples.
+- 📱 **Responsive** — Looks great on desktop, tablet, and mobile.
 
-[Detailed deployment guide →](https://pierce403.github.io/sloppy-wiki/deployment/github-pages/)
+## 📚 Learn more
+
+- [Full documentation](https://pierce403.github.io/sloppy-wiki) — explore guides, recipes, and customization tips.
+- [`SETUP.md`](SETUP.md) — detailed provisioning workflow for your first wiki instance.
+- [`AGENTS.md`](AGENTS.md) — how AI assistants should collaborate in this repo.
+
+## 🚢 Deployment flow
+
+Push to `main` → GitHub Actions installs dependencies → `mkdocs build --strict` → deploys to the `gh-pages` branch → GitHub Pages serves your site at `https://<you>.github.io/<repo>`.
+See the [deployment guide](https://pierce403.github.io/sloppy-wiki/deployment/github-pages/) for options like custom domains.
+
+## 🛠️ Tech stack
+
+- [MkDocs](https://www.mkdocs.org/)
+- [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
+- [PyMdown Extensions](https://facelessuser.github.io/pymdown-extensions/)
+- [GitHub Actions](https://github.com/features/actions)
+- [GitHub Pages](https://pages.github.com/)
 
 ## 📄 License
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-Built with these excellent open-source projects:
-
-- [MkDocs](https://www.mkdocs.org/) by Tom Christie
-- [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) by Martin Donath
-- [PyMdown Extensions](https://facelessuser.github.io/pymdown-extensions/) by Isaac Muse
+Apache License 2.0 — see [LICENSE](LICENSE).
 
 ---
 
-**Ready to build your wiki?** [Get Started →](https://pierce403.github.io/sloppy-wiki/getting-started/quick-start/)
-
-Built with ❤️ by [Pierce](https://github.com/pierce403)
+Built with ❤️ by [Pierce](https://github.com/pierce403) and the Sloppy Wiki community.
