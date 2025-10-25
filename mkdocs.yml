@@ -38,7 +38,6 @@ theme:
   # Navigation and UI features
   features:
     - navigation.sections       # Section grouping in sidebar
-    - navigation.expand         # Expand navigation by default
     - navigation.path           # Breadcrumb navigation
     - navigation.top            # Back-to-top button
     - search.suggest            # Search suggestions
