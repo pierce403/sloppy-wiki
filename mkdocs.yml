@@ -37,14 +37,15 @@ theme:
   
   # Navigation and UI features
   features:
-    - navigation.sections       # Section grouping in sidebar
-    - navigation.path           # Breadcrumb navigation
-    - navigation.top            # Back-to-top button
-    - search.suggest            # Search suggestions
-    - search.highlight          # Highlight search terms
-    - content.code.copy         # Copy button for code blocks
-    - content.action.edit       # Edit button on pages
-  
+    - navigation.instant        # Match deanpierce.net behavior
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - toc.follow
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+
   # Logo and favicon (customize these!)
   logo: img/sloppy-wiki.png
   favicon: img/favicon.png
@@ -101,10 +102,6 @@ markdown_extensions:
 # Additional CSS
 extra_css:
   - css/custom-styles.css
-
-# Additional JavaScript for custom behavior
-extra_javascript:
-  - js/expand-nav.js
 
 # Navigation structure
 # Add your pages here in the order you want them to appear
