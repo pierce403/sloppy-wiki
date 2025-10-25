@@ -37,7 +37,6 @@ theme:
   
   # Navigation and UI features
   features:
-    - navigation.tabs           # Top-level sections as tabs
     - navigation.sections       # Section grouping in sidebar
     - navigation.expand         # Expand navigation by default
     - navigation.path           # Breadcrumb navigation
