@@ -103,6 +103,10 @@ markdown_extensions:
 extra_css:
   - css/custom-styles.css
 
+# Additional JavaScript for custom behavior
+extra_javascript:
+  - js/expand-nav.js
+
 # Navigation structure
 # Add your pages here in the order you want them to appear
 nav:
