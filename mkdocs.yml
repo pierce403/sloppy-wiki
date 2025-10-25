@@ -39,7 +39,6 @@ theme:
   features:
     - navigation.instant        # Instant page loading
     - navigation.tracking       # Track active page
-    - navigation.sections       # Section grouping in sidebar
     - toc.follow                # Follow table of contents
     - search.suggest            # Search suggestions
     - search.highlight          # Highlight search terms
