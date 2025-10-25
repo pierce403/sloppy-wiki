@@ -1,0 +1,63 @@
+name: Test AGENTS.md Changes
+
+# This workflow ensures AGENTS.md changes don't break the build
+# It runs whenever AGENTS.md is modified
+
+on:
+  push:
+    paths:
+      - 'AGENTS.md'
+  pull_request:
+    paths:
+      - 'AGENTS.md'
+
+jobs:
+  test-build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Test build with strict mode
+        run: |
+          echo "Testing MkDocs build after AGENTS.md update..."
+          mkdocs build --strict --verbose
+          echo "✓ Build successful! AGENTS.md changes are safe to commit."
+      
+      - name: Verify site directory
+        run: |
+          if [ ! -d "site" ]; then
+            echo "ERROR: site directory not created"
+            exit 1
+          fi
+          echo "✓ Site directory exists"
+          
+      - name: Check for critical files
+        run: |
+          if [ ! -f "site/index.html" ]; then
+            echo "ERROR: index.html not generated"
+            exit 1
+          fi
+          echo "✓ All critical files present"
+
+      - name: Success notification
+        if: success()
+        run: |
+          echo "================================================"
+          echo "✓ AGENTS.md update verified successfully!"
+          echo "✓ Build passed with no errors or warnings"
+          echo "✓ Safe to commit and deploy"
+          echo "================================================"
+

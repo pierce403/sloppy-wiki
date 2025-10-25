@@ -1,0 +1,161 @@
+# MkDocs Configuration for Sloppy Wiki Template
+# This file defines your wiki's structure, theme, and features
+
+site_name: Sloppy Wiki Template
+site_description: A template for creating beautiful wikis with MkDocs
+site_author: Your Name Here
+site_url: https://yourusername.github.io/your-wiki
+
+# Repository information (update these for your project)
+repo_name: pierce403/sloppy-wiki
+repo_url: https://github.com/pierce403/sloppy-wiki
+edit_uri: edit/main/docs/
+
+# Theme configuration - using Material for MkDocs
+theme:
+  name: material
+  
+  # Color scheme
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    
+    # Dark mode (default)
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  # Navigation and UI features
+  features:
+    - navigation.tabs           # Top-level sections as tabs
+    - navigation.sections       # Section grouping in sidebar
+    - navigation.expand         # Expand navigation by default
+    - navigation.path           # Breadcrumb navigation
+    - navigation.top            # Back-to-top button
+    - search.suggest            # Search suggestions
+    - search.highlight          # Highlight search terms
+    - content.code.copy         # Copy button for code blocks
+    - content.action.edit       # Edit button on pages
+  
+  # Logo and favicon (customize these!)
+  logo: img/logo.png
+  favicon: img/favicon.png
+  
+  # Font configuration (optional)
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+# Extensions for enhanced Markdown features
+markdown_extensions:
+  # Python Markdown extensions
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  
+  # PyMdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Additional CSS
+extra_css:
+  - css/custom-styles.css
+
+# Navigation structure
+# Add your pages here in the order you want them to appear
+nav:
+  - Home: index.md
+  
+  - Getting Started:
+    - Quick Start: getting-started/quick-start.md
+    - Installation: getting-started/installation.md
+    - Configuration: getting-started/configuration.md
+    - First Steps: getting-started/first-steps.md
+  
+  - Customization:
+    - Themes: customization/themes.md
+    - Navigation: customization/navigation.md
+    - Styling: customization/styling.md
+    - Plugins: customization/plugins.md
+  
+  - Content Guide:
+    - Writing Pages: content/writing-pages.md
+    - Markdown Tips: content/markdown-tips.md
+    - Code Blocks: content/code-blocks.md
+    - Diagrams: content/diagrams.md
+  
+  - Deployment:
+    - GitHub Pages: deployment/github-pages.md
+    - Custom Domain: deployment/custom-domain.md
+    - Alternatives: deployment/alternatives.md
+  
+  - Examples:
+    - Sample Page: examples/sample-page.md
+    - Templates: examples/templates.md
+  
+  - About: about.md
+
+# Plugins (optional, but recommended)
+plugins:
+  - search:
+      lang: en
+  - tags
+
+# Extra footer information
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/pierce403/sloppy-wiki
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/yourusername
+  
+  # Version information (optional)
+  version:
+    provider: mike
+
+# Copyright notice (customize this!)
+copyright: Copyright &copy; 2025 Your Name - Licensed under Apache 2.0
+
