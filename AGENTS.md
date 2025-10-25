@@ -27,6 +27,7 @@ AI agents must proactively check whether the user is provisioning their wiki for
    - Ensure they run `source activate.sh`, `./serve.sh`, and `./build.sh` during the session.
 6. **Confirm completion**: Repeat the remaining steps from `SETUP.md` (deployment, QA, commit workflow) so the user knows they finished first-time setup.
 7. **Always commit and push**: After testing, `git add .`, `git commit`, and `git push` (per README workflow). Do not leave uncommitted work when you finish assisting the user.
+8. **Leave `gh-pages` alone**: Never edit or commit directly on the `gh-pages` branch. That branch is overwritten by GitHub Actions deploys—always work on `main` (or feature branches) and let the workflow publish the site.
 
 ## Development Workflow
 
