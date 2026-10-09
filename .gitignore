@@ -28,3 +28,9 @@ Thumbs.db
 .env
 .env.local
 
+
+# Cloudflare build tooling and local credentials
+node_modules/
+.wrangler/
+.dev.vars*
+.env*

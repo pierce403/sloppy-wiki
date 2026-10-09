@@ -56,7 +56,7 @@ git push
 This repository includes GitHub Actions workflows that:
 
 - Test the build on every push
-- Deploy to GitHub Pages on successful builds
+- Validate deployment packaging without publishing from GitHub Actions
 - Validate that AGENTS.md changes don't break the build
 
 ## File Structure Guidelines
@@ -154,15 +154,13 @@ Before committing, verify:
 
 ## Deployment Notes
 
-### GitHub Pages Setup
+### Native Git publishing
 
-The repository uses GitHub Actions to automatically deploy to GitHub Pages. The workflow:
-
-1. Triggers on push to `main` branch
-2. Installs Python and dependencies
-3. Runs `mkdocs build --strict` (fails on warnings)
-4. Deploys to `gh-pages` branch
-5. GitHub Pages serves from `gh-pages`
+The hosted demo uses Cloudflare Workers Builds. Production pushes to `main`
+are fetched, strictly built and published by Cloudflare. GitHub Actions validates
+without Cloudflare secrets or deployment permission. Keep the previous Pages
+deployment and source CNAME for recovery; do not overlap manual publishing with
+native Git builds. Run `npm run deploy:check` before migration commits.
 
 ### Custom Domain (Optional)
 
@@ -179,10 +177,10 @@ Users can add a `CNAME` file to `docs/` directory with their domain name.
 
 ### Deployment Fails
 
-- Verify GitHub Pages is enabled in repo settings
-- Check Actions tab for error messages
-- Ensure deploy.yml has correct permissions
-- Confirm GITHUB_TOKEN has necessary access
+- Check Cloudflare Workers Builds connection, production branch and build logs
+- Run `npm run deploy:check` with the locked dependencies
+- Inspect GitHub validation results without adding Cloudflare credentials there
+- Verify the exact deployed commit and public URL after a successful build
 
 ### Local Server Issues
 
@@ -230,7 +228,7 @@ If you're an AI agent and unsure about something:
 
 ---
 
-**Last Updated**: 2025-10-25
+**Last Updated**: 2026-10-09
 **Maintained By**: AI Agents + Human Contributors
 **Build Status**: Should always be passing ✓
 

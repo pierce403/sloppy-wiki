@@ -4,7 +4,8 @@
 site_name: Sloppy Wiki Template
 site_description: A template for creating beautiful wikis with MkDocs
 site_author: Your Name Here
-site_url: https://yourusername.github.io/your-wiki
+# Published demo address; replace this when creating a fork.
+site_url: https://sloppy.wiki/
 
 # Repository information (update these for your project)
 repo_name: pierce403/sloppy-wiki
