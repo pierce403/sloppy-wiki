@@ -232,3 +232,10 @@ If you're an AI agent and unsure about something:
 **Maintained By**: AI Agents + Human Contributors
 **Build Status**: Should always be passing ✓
 
+## Custom-domain source configuration
+
+- Source configuration declares only the exact Custom Domain `sloppy.wiki` and
+  keeps workers.dev enabled. Publish route commits after zone activation and
+  verified DNS import; verify the resulting deployed commit, DNS and HTTPS.
+- Route preparation is local validation; live attachment and DNS cutover require
+  separate evidence recorded in `NOTES.md`.
