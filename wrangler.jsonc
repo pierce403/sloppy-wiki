@@ -23,8 +23,8 @@
   },
   "routes": [
     {
-      "pattern": "sloppy.wiki",
-      "custom_domain": true
+      "pattern": "sloppy.wiki/*",
+      "zone_name": "sloppy.wiki"
     }
   ]
 }

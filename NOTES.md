@@ -36,24 +36,56 @@ DNS/mail cutover remain pending separate verification steps.
 Corrected the published demo canonical URL from the template placeholder to
 `https://sloppy.wiki/`; generic template content and page paths remain intact.
 
-## 2026-10-09: intended custom-domain route
+## 2026-10-09: superseded local Custom Domain proposal
 
-The source now declares `routes: [{"pattern": "sloppy.wiki", "custom_domain": true}]`
-while preserving workers.dev, assets, renderer, runtime date and observability.
-The route is exact; no wildcard or additional hostname is introduced. This
-follow-up is prepared locally and must remain unpushed until the zone is active
-after the approved registrar delegation and its DNS import is verified.
+The earlier local commit `2cde47ff5257797cbc5a515c8e879e1172940bd0` prepared an exact Custom Domain and was
+not pushed. Later native pilot attempts on other migration zones failed with
+Cloudflare error 100117 because imported externally managed apex A records
+blocked Custom Domain provisioning. Wrangler's noninteractive override flags
+did not replace those records. The ordinary-route child below supersedes that
+proposal without rewriting its history or deleting DNS records.
 
-Native Git deployment will provision the hostname's Worker DNS and TLS. Pinned
-Wrangler's noninteractive deployment can replace conflicting DNS/origin records
-for this exact hostname; preserve the previous website records for recovery and
-verify the deployed domain afterward. Mail and unrelated records remain part of
-the separate DNS preservation checks. This preparation does not establish a live
-custom-domain deployment, delegation, certificate or public HTTPS result.
+## 2026-10-09: ordinary Worker route preparation
 
-Exact-configuration schema/packaging dry run passed with Wrangler 4.145.0
-(106 existing asset files, no bindings). Initial strict-build and local HTTP
-evidence remains applicable because assets and build scripts are unchanged.
-No remote deployment, route, DNS or registrar mutation occurred in this step.
+The source now prepares
+`routes: [{"pattern": "sloppy.wiki/*", "zone_name": "sloppy.wiki"}]`.
+The pattern covers paths only on `sloppy.wiki`; no other hostname is added.
+All other Wrangler settings, workers.dev availability, compatibility date
+2026-10-07, pinned Wrangler 4.145.0, renderer, dependencies, build scripts and
+public content remain unchanged. There is no Worker script (`main`) or origin
+fetch fallback. Static Assets retains directory redirects and terminal
+`404-page` responses for missing paths.
 
-Reference: https://developers.cloudflare.com/workers/configuration/routing/custom-domains/
+For cutover, retain the original apex website A values `185.199.109.153`
+with Cloudflare proxying enabled. Ordinary routing uses the existing proxied
+records; it does not provision Custom Domain DNS or require deleting them.
+Retain source CNAME, previous Pages deployment and DNS snapshots for recovery;
+mail, identity, verification and unrelated records remain in the import checks.
+
+Before this edit, the clean `main` checkout was at `2cde47ff5257797cbc5a515c8e879e1172940bd0` and refreshed
+HTTPS `origin/main` remained at the initial Worker-only commit `90c5703abe508e1b8447c348422791397a6a5640`.
+All four Group B native connections and 34 workers.dev HTTPS checks were
+recorded by 2026-10-09 22:00:08 UTC, separately from exact Git deployment identity.
+The zone snapshot at 22:05:57 UTC recorded `sloppy.wiki` as active; dashboard
+certificate observations through 22:07:55 UTC recorded Active. These
+dated observations do not establish this new route's live deployment.
+
+Release gates are an active zone, active certificate, verified proxied DNS import,
+successful native Git build for the exact new commit and its deployed version,
+then credential-free custom-host HTTPS, HTTP upgrade, wiki pages/canonicals,
+CSS, populated search, configured feeds and a genuine 404. Confirm preserved
+DNS/mail records separately.
+
+The ordinary-route strict locked build and Wrangler 4.145.0 dry run passed at
+2026-10-09T22:20:37.957354+00:00. Validation used Python 3.12.7 and Node.js 24.19.0;
+the repository's production runtime selectors remain unchanged. Wrangler reported
+106 asset entries, no bindings and successful dry-run completion. Generated
+index, real 404 and populated search (412 entries) are present;
+source CNAME is preserved and output CNAME is excluded. The only changes are
+`wrangler.jsonc`, `README.md`, `AGENTS.md` and this note. No push, remote deployment,
+CF/DNS/registrar or runtime mutation occurred during this local source preparation.
+
+References:
+
+- https://developers.cloudflare.com/workers/configuration/routing/routes/
+- https://developers.cloudflare.com/workers/static-assets/routing/static-site-generation/
