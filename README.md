@@ -98,3 +98,10 @@ Built with these excellent open-source projects:
 **Ready to build your wiki?** [Get Started →](https://sloppy.wiki/getting-started/quick-start/)
 
 Built with ❤️ by [Pierce](https://github.com/pierce403)
+
+## Licensing scope
+
+Original code and documentation authored for this project by Dean Pierce are licensed under the [Apache License 2.0](LICENSE).
+Third-party dependencies, assets, and quoted material retain their respective licenses and notices. This grant does not relicense third-party work.
+
+Copyright 2025 Pierce. The complete license text replaces the previous abbreviated Apache notice.
